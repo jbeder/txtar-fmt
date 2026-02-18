@@ -3,11 +3,22 @@
   "displayName": "Txtar",
   "description": "Language support for txtar archive format",
   "version": "0.0.1",
+  "publisher": "txtar-fmt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbeder/txtar-fmt"
+  },
   "engines": {
     "vscode": "^1.60.0"
   },
   "categories": [
     "Programming Languages"
+  ],
+  "keywords": [
+    "txtar",
+    "archive",
+    "golang",
+    "syntax"
   ],
   "contributes": {
     "languages": [
@@ -18,8 +29,7 @@
           "txtar"
         ],
         "extensions": [
-          ".txtar",
-          ".txt"
+          ".txtar"
         ],
         "configuration": "./language-configuration.json"
       }
