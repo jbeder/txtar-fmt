@@ -4,17 +4,374 @@
   "scopeName": "source.txtar",
   "patterns": [
     {
-      "include": "#file-marker"
+      "include": "#file-go"
     },
     {
-      "include": "#file-content"
+      "include": "#file-python"
+    },
+    {
+      "include": "#file-javascript"
+    },
+    {
+      "include": "#file-typescript"
+    },
+    {
+      "include": "#file-json"
+    },
+    {
+      "include": "#file-yaml"
+    },
+    {
+      "include": "#file-markdown"
+    },
+    {
+      "include": "#file-html"
+    },
+    {
+      "include": "#file-css"
+    },
+    {
+      "include": "#file-shell"
+    },
+    {
+      "include": "#file-java"
+    },
+    {
+      "include": "#file-c"
+    },
+    {
+      "include": "#file-cpp"
+    },
+    {
+      "include": "#file-rust"
+    },
+    {
+      "include": "#file-xml"
+    },
+    {
+      "include": "#file-generic"
     },
     {
       "include": "#comment"
     }
   ],
   "repository": {
-    "file-marker": {
+    "file-go": {
+      "begin": "^(--\\s+)(.*\\.go)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.go",
+      "patterns": [
+        {
+          "include": "source.go"
+        }
+      ]
+    },
+    "file-python": {
+      "begin": "^(--\\s+)(.*\\.py)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.python",
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    "file-javascript": {
+      "begin": "^(--\\s+)(.*\\.js)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.javascript",
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    "file-typescript": {
+      "begin": "^(--\\s+)(.*\\.ts)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.typescript",
+      "patterns": [
+        {
+          "include": "source.ts"
+        }
+      ]
+    },
+    "file-json": {
+      "begin": "^(--\\s+)(.*\\.json)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.json",
+      "patterns": [
+        {
+          "include": "source.json"
+        }
+      ]
+    },
+    "file-yaml": {
+      "begin": "^(--\\s+)(.*\\.(yaml|yml))(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "4": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.yaml",
+      "patterns": [
+        {
+          "include": "source.yaml"
+        }
+      ]
+    },
+    "file-markdown": {
+      "begin": "^(--\\s+)(.*\\.(md|markdown))(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "4": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.markdown",
+      "patterns": [
+        {
+          "include": "text.html.markdown"
+        }
+      ]
+    },
+    "file-html": {
+      "begin": "^(--\\s+)(.*\\.html)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.html",
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    "file-css": {
+      "begin": "^(--\\s+)(.*\\.css)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.css",
+      "patterns": [
+        {
+          "include": "source.css"
+        }
+      ]
+    },
+    "file-shell": {
+      "begin": "^(--\\s+)(.*\\.(sh|bash))(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "4": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.shell",
+      "patterns": [
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    "file-java": {
+      "begin": "^(--\\s+)(.*\\.java)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.java",
+      "patterns": [
+        {
+          "include": "source.java"
+        }
+      ]
+    },
+    "file-c": {
+      "begin": "^(--\\s+)(.*\\.c)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.c",
+      "patterns": [
+        {
+          "include": "source.c"
+        }
+      ]
+    },
+    "file-cpp": {
+      "begin": "^(--\\s+)(.*\\.(cpp|cc|cxx|h|hpp))(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "4": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.cpp",
+      "patterns": [
+        {
+          "include": "source.cpp"
+        }
+      ]
+    },
+    "file-rust": {
+      "begin": "^(--\\s+)(.*\\.rs)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.rust",
+      "patterns": [
+        {
+          "include": "source.rust"
+        }
+      ]
+    },
+    "file-xml": {
+      "begin": "^(--\\s+)(.*\\.xml)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "contentName": "meta.embedded.block.xml",
+      "patterns": [
+        {
+          "include": "text.xml"
+        }
+      ]
+    },
+    "file-generic": {
       "begin": "^(--\\s+)(.+?)(\\s+--\\s*)$",
       "beginCaptures": {
         "1": {
@@ -28,196 +385,11 @@
         }
       },
       "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "#embedded-go"
-        },
-        {
-          "include": "#embedded-python"
-        },
-        {
-          "include": "#embedded-javascript"
-        },
-        {
-          "include": "#embedded-typescript"
-        },
-        {
-          "include": "#embedded-json"
-        },
-        {
-          "include": "#embedded-yaml"
-        },
-        {
-          "include": "#embedded-markdown"
-        },
-        {
-          "include": "#embedded-html"
-        },
-        {
-          "include": "#embedded-css"
-        },
-        {
-          "include": "#embedded-shell"
-        },
-        {
-          "include": "#embedded-java"
-        },
-        {
-          "include": "#embedded-c"
-        },
-        {
-          "include": "#embedded-cpp"
-        },
-        {
-          "include": "#embedded-rust"
-        },
-        {
-          "include": "#embedded-xml"
-        }
-      ]
+      "contentName": "text.plain.txtar"
     },
     "comment": {
       "match": "^.*$",
       "name": "comment.line.txtar"
-    },
-    "file-content": {
-      "match": "^.*$",
-      "name": "text.txtar"
-    },
-    "embedded-go": {
-      "begin": "(?<=^--\\s+.*\\.go\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.go"
-        }
-      ]
-    },
-    "embedded-python": {
-      "begin": "(?<=^--\\s+.*\\.py\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.python"
-        }
-      ]
-    },
-    "embedded-javascript": {
-      "begin": "(?<=^--\\s+.*\\.js\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.js"
-        }
-      ]
-    },
-    "embedded-typescript": {
-      "begin": "(?<=^--\\s+.*\\.ts\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.ts"
-        }
-      ]
-    },
-    "embedded-json": {
-      "begin": "(?<=^--\\s+.*\\.json\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.json"
-        }
-      ]
-    },
-    "embedded-yaml": {
-      "begin": "(?<=^--\\s+.*\\.(yaml|yml)\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.yaml"
-        }
-      ]
-    },
-    "embedded-markdown": {
-      "begin": "(?<=^--\\s+.*\\.(md|markdown)\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "text.html.markdown"
-        }
-      ]
-    },
-    "embedded-html": {
-      "begin": "(?<=^--\\s+.*\\.html\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "text.html.basic"
-        }
-      ]
-    },
-    "embedded-css": {
-      "begin": "(?<=^--\\s+.*\\.css\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.css"
-        }
-      ]
-    },
-    "embedded-shell": {
-      "begin": "(?<=^--\\s+.*\\.(sh|bash)\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.shell"
-        }
-      ]
-    },
-    "embedded-java": {
-      "begin": "(?<=^--\\s+.*\\.java\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.java"
-        }
-      ]
-    },
-    "embedded-c": {
-      "begin": "(?<=^--\\s+.*\\.c\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.c"
-        }
-      ]
-    },
-    "embedded-cpp": {
-      "begin": "(?<=^--\\s+.*\\.(cpp|cc|cxx|h|hpp)\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.cpp"
-        }
-      ]
-    },
-    "embedded-rust": {
-      "begin": "(?<=^--\\s+.*\\.rs\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "source.rust"
-        }
-      ]
-    },
-    "embedded-xml": {
-      "begin": "(?<=^--\\s+.*\\.xml\\s+--\\s*$)\\n?",
-      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
-      "patterns": [
-        {
-          "include": "text.xml"
-        }
-      ]
     }
   }
 }
