@@ -1,0 +1,35 @@
+This is a comment at the beginning of the txtar file.
+It can span multiple lines.
+
+-- hello.go --
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+-- data.json --
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "A sample JSON file"
+}
+-- script.py --
+def greet(name):
+    print(f"Hello, {name}!")
+
+if __name__ == "__main__":
+    greet("World")
+-- README.md --
+# Sample README
+
+This is a sample markdown file embedded in a txtar archive.
+
+## Features
+
+- Feature 1
+- Feature 2
+-- plain.txt --
+This is just plain text without any special formatting.
+It should appear as plain text.

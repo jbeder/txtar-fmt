@@ -1,0 +1,93 @@
+This is a comment at the beginning.
+Multiple comment lines are allowed.
+
+-- test.go --
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello from Go!")
+}
+-- config.json --
+{
+  "key": "value",
+  "number": 42
+}
+-- script.py --
+#!/usr/bin/env python3
+def hello():
+    print("Hello from Python!")
+
+hello()
+-- styles.css --
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+-- index.html --
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
+-- app.js --
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+greet("World");
+-- README.md --
+# Test File
+
+This is a **markdown** file.
+
+- Item 1
+- Item 2
+-- data.yaml --
+name: test
+version: 1.0.0
+dependencies:
+  - package1
+  - package2
+-- script.sh --
+#!/bin/bash
+echo "Hello from Bash!"
+-- Main.java --
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello from Java!");
+    }
+}
+-- example.rs --
+fn main() {
+    println!("Hello from Rust!");
+}
+-- program.c --
+#include <stdio.h>
+
+int main() {
+    printf("Hello from C!\n");
+    return 0;
+}
+-- program.cpp --
+#include <iostream>
+
+int main() {
+    std::cout << "Hello from C++!" << std::endl;
+    return 0;
+}
+-- data.xml --
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <item>Hello from XML</item>
+</root>
+-- plain_file.txt --
+This is plain text without any special syntax highlighting.
+It should just appear as normal text.
+
+Final comment after all files.
