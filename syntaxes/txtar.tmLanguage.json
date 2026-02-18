@@ -1,0 +1,223 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Txtar",
+  "scopeName": "source.txtar",
+  "patterns": [
+    {
+      "include": "#file-marker"
+    },
+    {
+      "include": "#file-content"
+    },
+    {
+      "include": "#comment"
+    }
+  ],
+  "repository": {
+    "file-marker": {
+      "begin": "^(--\\s+)(.+?)(\\s+--\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.file-marker.txtar"
+        },
+        "2": {
+          "name": "entity.name.filename.txtar"
+        },
+        "3": {
+          "name": "punctuation.definition.file-marker.txtar"
+        }
+      },
+      "end": "^(?=--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "#embedded-go"
+        },
+        {
+          "include": "#embedded-python"
+        },
+        {
+          "include": "#embedded-javascript"
+        },
+        {
+          "include": "#embedded-typescript"
+        },
+        {
+          "include": "#embedded-json"
+        },
+        {
+          "include": "#embedded-yaml"
+        },
+        {
+          "include": "#embedded-markdown"
+        },
+        {
+          "include": "#embedded-html"
+        },
+        {
+          "include": "#embedded-css"
+        },
+        {
+          "include": "#embedded-shell"
+        },
+        {
+          "include": "#embedded-java"
+        },
+        {
+          "include": "#embedded-c"
+        },
+        {
+          "include": "#embedded-cpp"
+        },
+        {
+          "include": "#embedded-rust"
+        },
+        {
+          "include": "#embedded-xml"
+        }
+      ]
+    },
+    "comment": {
+      "match": "^.*$",
+      "name": "comment.line.txtar"
+    },
+    "file-content": {
+      "match": "^.*$",
+      "name": "text.txtar"
+    },
+    "embedded-go": {
+      "begin": "(?<=^--\\s+.*\\.go\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.go"
+        }
+      ]
+    },
+    "embedded-python": {
+      "begin": "(?<=^--\\s+.*\\.py\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    "embedded-javascript": {
+      "begin": "(?<=^--\\s+.*\\.js\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    "embedded-typescript": {
+      "begin": "(?<=^--\\s+.*\\.ts\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.ts"
+        }
+      ]
+    },
+    "embedded-json": {
+      "begin": "(?<=^--\\s+.*\\.json\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.json"
+        }
+      ]
+    },
+    "embedded-yaml": {
+      "begin": "(?<=^--\\s+.*\\.(yaml|yml)\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.yaml"
+        }
+      ]
+    },
+    "embedded-markdown": {
+      "begin": "(?<=^--\\s+.*\\.(md|markdown)\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "text.html.markdown"
+        }
+      ]
+    },
+    "embedded-html": {
+      "begin": "(?<=^--\\s+.*\\.html\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    "embedded-css": {
+      "begin": "(?<=^--\\s+.*\\.css\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.css"
+        }
+      ]
+    },
+    "embedded-shell": {
+      "begin": "(?<=^--\\s+.*\\.(sh|bash)\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    "embedded-java": {
+      "begin": "(?<=^--\\s+.*\\.java\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.java"
+        }
+      ]
+    },
+    "embedded-c": {
+      "begin": "(?<=^--\\s+.*\\.c\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.c"
+        }
+      ]
+    },
+    "embedded-cpp": {
+      "begin": "(?<=^--\\s+.*\\.(cpp|cc|cxx|h|hpp)\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.cpp"
+        }
+      ]
+    },
+    "embedded-rust": {
+      "begin": "(?<=^--\\s+.*\\.rs\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "source.rust"
+        }
+      ]
+    },
+    "embedded-xml": {
+      "begin": "(?<=^--\\s+.*\\.xml\\s+--\\s*$)\\n?",
+      "end": "(?=^--\\s+.+?\\s+--\\s*$)|\\Z",
+      "patterns": [
+        {
+          "include": "text.xml"
+        }
+      ]
+    }
+  }
+}

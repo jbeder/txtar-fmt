@@ -1,0 +1,35 @@
+{
+  "name": "txtar",
+  "displayName": "Txtar",
+  "description": "Language support for txtar archive format",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "txtar",
+        "aliases": [
+          "Txtar",
+          "txtar"
+        ],
+        "extensions": [
+          ".txtar",
+          ".txt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "txtar",
+        "scopeName": "source.txtar",
+        "path": "./syntaxes/txtar.tmLanguage.json"
+      }
+    ]
+  }
+}
